@@ -644,7 +644,7 @@
         },
         {
           "name": "FORWARD_NPM_WEB_PORT",
-          "label": "Admin Web Port ",
+          "label": "Admin Web Port",
           "default": "81"
         }
       ]
