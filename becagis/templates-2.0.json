@@ -552,6 +552,32 @@
           "container": "/var/www/html"
         }
       ]
+    },
+    {
+      "type": 1,
+      "title": "PostGIS",
+      "description": "PostGIS is a spatial database extender for PostgreSQL object-relational database.",
+      "categories": ["becagis"],
+      "platform": "linux",
+      "logo": "https://postgis.net/logos/postgis-logo-small.png",
+      "image": "becagis/becadb_postgis:14-3.2",
+      "restart_policy": "unless-stopped",
+      "ports": ["5432/tcp"],
+      "env": [
+        {
+          "name": "POSTGRES_USER",
+          "label": "Superuser"
+        },
+        {
+          "name": "POSTGRES_PASS",
+          "label": "Superuser password"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/var/lib/postgresql"
+        }
+      ]
     }
   ]
 }
