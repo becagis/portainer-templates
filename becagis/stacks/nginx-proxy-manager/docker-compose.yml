@@ -31,6 +31,7 @@ services:
       - npm-db
     networks:
       - npm-internal
+#      - npm-network
 
   npm-db:
     image: mariadb
@@ -48,3 +49,5 @@ services:
 
 networks:
   npm-internal:
+#  npm-network:
+#    external: true
