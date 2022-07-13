@@ -525,7 +525,7 @@
       "type": 1,
       "title": "BecaGIS Workspace",
       "description": "Development environment",
-      "categories": ["operating-system"],
+      "categories": ["becagis"],
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ubuntu.png",
       "image": "becagis/becadock_workspace:8.1",
