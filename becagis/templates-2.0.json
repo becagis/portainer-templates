@@ -608,9 +608,9 @@
     },
     {
       "type": 3,
-      "title": "Nginx Proxy Manager",
-      "description": "WordPress setup with a MySQL database",
-      "note": "Deploys a WordPress instance connected to a MySQL database.",
+      "title": "Nginx Proxy Manager (DB)",
+      "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+      "note": "Expose your services easily and securely",
       "logo": "https://nginxproxymanager.com/icon.png",
       "categories": ["becagis"],
       "platform": "linux",
@@ -620,10 +620,16 @@
       },
       "env": [
         {
-          "name": "MYSQL_DATABASE_PASSWORD",
-          "label": "Database root password",
+          "name": "MYSQL_ROOT_PASSWORD",
+          "label": "Root password",
           "description": "Password used by the MySQL root user.",
-          "preset": "hello123"
+          "default": "npm"
+        },
+        {
+          "name": "DB_MYSQL_PASSWORD",
+          "label": "Database password",
+          "description": "Password used by the MySQL user.",
+          "default": "npm"
         }
       ]
     }
