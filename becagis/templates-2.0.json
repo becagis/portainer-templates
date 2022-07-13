@@ -635,17 +635,17 @@
         {
           "name": "FORWARD_NPM_HTTP_PORT",
           "label": "Public HTTP Port",
-          "default": 80
+          "default": "80"
         },
         {
           "name": "FORWARD_NPM_HTTPS_PORT",
           "label": "Public HTTPS Port",
-          "default": 443
+          "default": "443"
         },
         {
           "name": "FORWARD_NPM_WEB_PORT",
           "label": "Admin Web Port",
-          "default": 81
+          "default": "81"
         }
       ]
     }
