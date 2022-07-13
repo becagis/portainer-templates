@@ -631,6 +631,21 @@
           "label": "Database password",
           "description": "Password used by the MySQL user.",
           "default": "npm"
+        },
+        {
+          "name": "FORWARD_NPM_HTTP_PORT",
+          "label": "Public HTTP Port",
+          "default": 80
+        },
+        {
+          "name": "FORWARD_NPM_HTTPS_PORT",
+          "label": "Public HTTPS Port",
+          "default": 443
+        },
+        {
+          "name": "FORWARD_NPM_WEB_PORT",
+          "label": "Admin Web Port",
+          "default": 81
         }
       ]
     }
