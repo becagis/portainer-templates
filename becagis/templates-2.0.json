@@ -520,22 +520,6 @@
       "image": "ubuntu:latest",
       "interactive": true,
       "command": "/bin/bash"
-    },
-    {
-      "type": 1,
-      "title": "BecaGIS Workspace",
-      "description": "Development environment",
-      "categories": ["becagis"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ubuntu.png",
-      "image": "becagis/becadock_workspace:8.1",
-      "restart_policy": "unless-stopped",
-      "ports": ["22/tcp"],
-      "volumes": [
-        {
-          "container": "/var/www"
-        }
-      ]
     }
   ]
 }
