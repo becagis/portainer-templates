@@ -616,7 +616,7 @@
       "categories": ["becagis"],
       "platform": "linux",
       "repository": {
-        "url": "https://github.com/becagis/portainer-template",
+        "url": "https://github.com/becagis/portainer-templates",
         "stackfile": "becagis/stacks/nginx-proxy-manager/docker-compose.yml"
       },
       "env": [
