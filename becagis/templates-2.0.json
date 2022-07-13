@@ -536,6 +536,22 @@
           "container": "/var/www"
         }
       ]
+    },
+    {
+      "type": 1,
+      "title": "Laravel Sail",
+      "description": "Laravel Sail is a light-weight command-line interface for interacting with Laravel's default Docker development environment.",
+      "categories": ["becagis"],
+      "platform": "linux",
+      "logo": "https://laravel.com/img/logotype.min.svg",
+      "image": "becagis/sail:8.1",
+      "restart_policy": "unless-stopped",
+      "ports": ["80/tcp", "5173/tcp"],
+      "volumes": [
+        {
+          "container": "/var/www/html"
+        }
+      ]
     }
   ]
 }
