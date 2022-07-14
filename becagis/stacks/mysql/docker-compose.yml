@@ -4,7 +4,10 @@ services:
   mysql:
     build:
       context: .
-    image: becagis/mysql
+      args:
+        - MYSQL_VERSION=${MYSQL_VERSION:-latest}
+        - TZ=${TZ:-Asia/Ho_Chi_Minh}
+    image: becagis/mysql:${MYSQL_VERSION:-latest}
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE:-default}
       - MYSQL_USER=${MYSQL_USER:-mysql}
