@@ -692,6 +692,7 @@
     {
       "type": 1,
       "title": "MySQL",
+      "name": "mysql",
       "description": "MySQL is a widely used, open-source relational database management system (RDBMS)",
       "categories": ["database", "becagis"],
       "platform": "linux",
@@ -730,6 +731,7 @@
     {
       "type": 1,
       "title": "pgAdmin 4",
+      "name": "pgadmin",
       "description": "MySQL is a widely used, open-source relational database management system (RDBMS)",
       "categories": ["becagis"],
       "platform": "linux",
