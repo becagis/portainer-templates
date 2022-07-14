@@ -599,12 +599,6 @@
           "label": "UPLOAD_LIMIT",
           "default": "2G"
         }
-      ],
-      "volumes": [
-        {
-          "container": "/etc/phpmyadmin",
-          "bind": "/data/becavol/phpmyadmin"
-        }
       ]
     },
     {
