@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  mysql:
+    build:
+      context: .
+    image: becagis/mysql
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-default}
+      - MYSQL_USER=${MYSQL_USER:-mysql}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-mysql@123}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-mysql@123}
+    volumes:
+      - ${MYSQL_VOL:-/data/becavol/mysql}:/var/lib/mysql
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    restart: on-failure

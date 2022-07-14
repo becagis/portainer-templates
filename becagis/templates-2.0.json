@@ -56,32 +56,6 @@
         }
       ]
     },
-       {
-      "type": 1,
-      "title": "MySQL",
-      "description": "The most popular open-source database",
-      "categories": ["database"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
-      "image": "mysql/mysql-server:5.7",
-      "env": [
-        {
-          "name": "MYSQL_ROOT_PASSWORD",
-          "label": "Root password"
-        },
-        {
-          "name": "MYSQL_ROOT_HOST",
-          "default": "%",
-          "preset": true
-        }
-      ],
-      "ports": ["3306/tcp"],
-      "volumes": [
-        {
-          "container": "/var/lib/mysql"
-        }
-      ]
-    },
     {
       "type": 1,
       "title": "MariaDB",
@@ -712,6 +686,44 @@
           "name": "NPM_DB_VOL",
           "label": "NPM_DB_VOL",
           "default": "/data/becavol/mariadb"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "MySQL",
+      "description": "MySQL is a widely used, open-source relational database management system (RDBMS)",
+      "categories": ["database", "becagis"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mysql.png",
+      "image": "mysql",
+      "env": [
+        {
+          "name": "MYSQL_DATABASE",
+          "label": "MYSQL_DATABASE",
+          "default": "default"
+        },
+        {
+          "name": "MYSQL_USER",
+          "label": "MYSQL_USER",
+          "default": "mysql"
+        },
+        {
+          "name": "MYSQL_PASSWORD",
+          "label": "MYSQL_PASSWORD",
+          "default": "mysql@123"
+        },
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "label": "MYSQL_ROOT_PASSWORD",
+          "default": "mysql@123"
+        }
+      ],
+      "ports": ["3306/tcp"],
+      "volumes": [
+        {
+          "container": "/var/lib/mysql",
+          "bind": "/data/becavol/mysql"
         }
       ]
     }
