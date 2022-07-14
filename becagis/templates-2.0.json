@@ -608,7 +608,7 @@
     {
       "type": 1,
       "title": "Nginx Proxy Manager",
-      "name": "nginx-proxy-manager",
+      "name": "npm",
       "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
       "logo": "https://nginxproxymanager.com/icon.png",
       "image": "jlesage/nginx-proxy-manager",
@@ -623,7 +623,7 @@
       "volumes": [
         {
           "container": "/data",
-          "bind": "/data/becavol/npm_app"
+          "bind": "/data/becavol/npm-app"
         },
         {
           "container": "/etc/letsencrypt",
@@ -724,6 +724,34 @@
         {
           "container": "/var/lib/mysql",
           "bind": "/data/becavol/mysql"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "pgAdmin 4",
+      "description": "MySQL is a widely used, open-source relational database management system (RDBMS)",
+      "categories": ["becagis"],
+      "platform": "linux",
+      "logo": "pgAdmin 4 is a web based administration tool for the PostgreSQL database. ",
+      "image": "dpage/pgadmin4",
+      "env": [
+        {
+          "name": "PGADMIN_DEFAULT_EMAIL",
+          "label": "PGADMIN_DEFAULT_EMAIL",
+          "default": "pgadmin@pgadmin.com"
+        },
+        {
+          "name": "PGADMIN_DEFAULT_PASSWORD",
+          "label": "PGADMIN_DEFAULT_PASSWORD",
+          "default": "pgadmin@123"
+        }
+      ],
+      "ports": ["80/tcp"],
+      "volumes": [
+        {
+          "container": "/var/lib/pgadmin",
+          "bind": "/data/becavol/pgadmin"
         }
       ]
     }
