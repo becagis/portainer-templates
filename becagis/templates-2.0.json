@@ -539,27 +539,23 @@
         {
           "name": "POSTGRES_USER",
           "label": "POSTGRES_USER",
-          "default":  "postgres"
+          "default": "postgres"
         },
         {
           "name": "POSTGRES_PASS",
           "label": "POSTGRES_PASS",
-          "default":  "postgres@123"
+          "default": "postgres@123"
         },
         {
           "name": "POSTGRES_MULTIPLE_EXTENSIONS",
           "label": "POSTGRES_MULTIPLE_EXTENSIONS",
-          "default":  "postgis,hstore,postgis_topology,postgis_raster,pgrouting,unaccent"
-        },
-        {
-          "name": "POSTGIS_VOL",
-          "label": "POSTGIS_VOL",
-          "default":  "/data/becavol/postgis"
+          "default": "postgis,hstore,postgis_topology,postgis_raster,pgrouting,unaccent"
         }
       ],
       "volumes": [
         {
-          "container": "/var/lib/postgresql"
+          "container": "/var/lib/postgresql",
+          "bind": "/data/becavol/postgis"
         }
       ]
     },
