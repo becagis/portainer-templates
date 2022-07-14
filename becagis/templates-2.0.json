@@ -649,11 +649,11 @@
       "volumes": [
         {
           "container": "/data",
-          "bind": "/.becavol/npm_app"
+          "bind": "/data/becavol/npm_app"
         },
         {
           "container": "/etc/letsencrypt",
-          "bind": "/.becavol/letsencrypt"
+          "bind": "/data/becavol/letsencrypt"
         }
       ]
     },
@@ -675,7 +675,7 @@
           "name": "DATA_PATH_HOST",
           "label": "Data Path Host",
           "description": "Choose storage path on your machine. For all storage systems",
-          "default": "/.becavol"
+          "default": "/data/becavol"
         },
         {
           "name": "FORWARD_NPM_HTTP_PORT",
@@ -703,6 +703,21 @@
           "label": "Database password",
           "description": "Password used by the MySQL user.",
           "default": "npm"
+        },
+        {
+          "name": "NPM_VOL",
+          "label": "NPM_VOL",
+          "default": "/data/becavol/npm_app_wdb"
+        },
+        {
+          "name": "LETSENCRYPT_VOL",
+          "label": "LETSENCRYPT_VOL",
+          "default": "/data/becavol/letsencrypt"
+        },
+        {
+          "name": "NPM_DB_VOL",
+          "label": "NPM_DB_VOL",
+          "default": "/data/becavol/mariadb"
         }
       ]
     }
