@@ -672,12 +672,6 @@
       },
       "env": [
         {
-          "name": "DATA_PATH_HOST",
-          "label": "Data Path Host",
-          "description": "Choose storage path on your machine. For all storage systems",
-          "default": "/data/becavol"
-        },
-        {
           "name": "FORWARD_NPM_HTTP_PORT",
           "label": "Public HTTP Port",
           "default": "80"
