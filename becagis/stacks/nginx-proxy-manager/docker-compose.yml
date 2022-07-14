@@ -1,9 +1,9 @@
 version: "3.7"
 
 services:
-  npm-app-wdb:
+  npm-app-hdb:
     image: jc21/nginx-proxy-manager:latest
-    container_name: npm-app-wdb
+#    container_name: npm-app-hdb
     restart: unless-stopped
     ports:
       # Public HTTP Port:
@@ -25,7 +25,7 @@ services:
       # Uncomment this if IPv6 is not enabled on your host
       # DISABLE_IPV6: 'true'
     volumes:
-      - ${NPM_VOL:-/data/becavol/npm_app_wdb}:/data
+      - ${NPM_VOL:-/data/becavol/npm-app-hdb}:/data
       - ${LETSENCRYPT_VOL:-/data/becavol/letsencrypt}:/etc/letsencrypt
     depends_on:
       - npm-db
@@ -35,7 +35,7 @@ services:
 
   npm-db:
     image: mariadb
-    container_name: npm-db
+#    container_name: npm-db
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD:-npm}"
