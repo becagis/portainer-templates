@@ -503,7 +503,6 @@
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ubuntu.png",
       "image": "becagis/becadock_workspace:8.1",
-      "restart_policy": "unless-stopped",
       "ports": ["22/tcp"],
       "volumes": [
         {
@@ -519,7 +518,6 @@
       "platform": "linux",
       "logo": "https://laravel.com/img/logotype.min.svg",
       "image": "becagis/sail:8.1",
-      "restart_policy": "unless-stopped",
       "ports": ["80/tcp", "5173/tcp"],
       "volumes": [
         {
@@ -536,7 +534,6 @@
       "platform": "linux",
       "logo": "https://postgis.net/logos/postgis-logo-small.png",
       "image": "becagis/becadb_postgis:14-3.2",
-      "restart_policy": "unless-stopped",
       "ports": ["5432/tcp"],
       "env": [
         {
@@ -563,7 +560,6 @@
       "image": "phpmyadmin",
       "categories": ["becagis"],
       "platform": "linux",
-      "restart_policy": "unless-stopped",
       "ports": [
         "80/tcp"
       ],
@@ -603,6 +599,12 @@
           "label": "UPLOAD_LIMIT",
           "default": "2G"
         }
+      ],
+      "volumes": [
+        {
+          "container": "/etc/phpmyadmin",
+          "bind": "/data/becavol/phpmyadmin"
+        }
       ]
     },
     {
@@ -614,7 +616,6 @@
       "image": "jlesage/nginx-proxy-manager",
       "categories": ["becagis"],
       "platform": "linux",
-      "restart_policy": "unless-stopped",
       "ports": [
         "80:80/tcp",
         "81:81/tcp",
