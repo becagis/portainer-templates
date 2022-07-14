@@ -731,7 +731,7 @@
     {
       "type": 1,
       "title": "pgAdmin 4",
-      "name": "pgadmin4",
+      "name": "pgadmin",
       "description": "pgAdmin 4 is a web based administration tool for the PostgreSQL database.",
       "categories": ["becagis"],
       "platform": "linux",
@@ -753,7 +753,7 @@
       "volumes": [
         {
           "container": "/var/lib/pgadmin",
-          "bind": "/data/becavol/pgadmin4"
+          "bind": "/data/becavol/pgadmin"
         }
       ]
     }
