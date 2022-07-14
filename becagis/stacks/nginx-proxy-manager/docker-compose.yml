@@ -25,8 +25,8 @@ services:
       # Uncomment this if IPv6 is not enabled on your host
       # DISABLE_IPV6: 'true'
     volumes:
-      - $HOME/.becavol/data/npm_app:/data
-      - $HOME/.becavol/data/letsencrypt:/etc/letsencrypt
+      - '~/.becavol/data/npm_app:/data'
+      - "~/.becavol/data/letsencrypt:/etc/letsencrypt"
     depends_on:
       - npm-db
     networks:
@@ -43,7 +43,7 @@ services:
       MYSQL_USER: "${DB_MYSQL_USER:-npm}"
       MYSQL_PASSWORD: "${DB_MYSQL_PASSWORD}"
     volumes:
-      - $HOME/.becavol/data/mariadb:/var/lib/mysql
+      - "$HOME/.becavol/data/mariadb:/var/lib/mysql"
     networks:
       - npm-internal
 
