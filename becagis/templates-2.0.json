@@ -621,16 +621,10 @@
       },
       "env": [
         {
-          "name": "MYSQL_ROOT_PASSWORD",
-          "label": "Root password",
-          "description": "Password used by the MySQL root user.",
-          "default": "npm"
-        },
-        {
-          "name": "DB_MYSQL_PASSWORD",
-          "label": "Database password",
-          "description": "Password used by the MySQL user.",
-          "default": "npm"
+          "name": "DATA_PATH_HOST",
+          "label": "Data Path Host",
+          "description": "Choose storage path on your machine. For all storage systems",
+          "default": "/home/ubuntu"
         },
         {
           "name": "FORWARD_NPM_HTTP_PORT",
@@ -646,6 +640,18 @@
           "name": "FORWARD_NPM_WEB_PORT",
           "label": "Admin Web Port",
           "default": "81"
+        },
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "label": "Root password",
+          "description": "Password used by the MySQL root user.",
+          "default": "npm"
+        },
+        {
+          "name": "DB_MYSQL_PASSWORD",
+          "label": "Database password",
+          "description": "Password used by the MySQL user.",
+          "default": "npm"
         }
       ]
     }
