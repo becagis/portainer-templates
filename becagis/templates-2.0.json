@@ -624,7 +624,7 @@
           "name": "DATA_PATH_HOST",
           "label": "Data Path Host",
           "description": "Choose storage path on your machine. For all storage systems",
-          "default": "/home/ubuntu"
+          "default": "/.becavol"
         },
         {
           "name": "FORWARD_NPM_HTTP_PORT",
