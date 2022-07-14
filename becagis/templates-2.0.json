@@ -528,21 +528,38 @@
     {
       "type": 1,
       "title": "PostGIS",
-      "name": "postgis14-3.2",
+      "name": "postgis",
       "description": "PostGIS is a spatial database extender for PostgreSQL object-relational database.",
       "categories": ["becagis"],
       "platform": "linux",
       "logo": "https://postgis.net/logos/postgis-logo-small.png",
-      "image": "becagis/becadb_postgis:14-3.2",
+      "image": "becagis/postgis",
       "ports": ["5432/tcp"],
       "env": [
         {
+          "name": "POSTGRES_DB",
+          "label": "POSTGRES_DB",
+          "default": "gis,postgis_sample"
+        },
+        {
           "name": "POSTGRES_USER",
-          "label": "Superuser"
+          "label": "POSTGRES_USER",
+          "default":  "postgres"
         },
         {
           "name": "POSTGRES_PASS",
-          "label": "Superuser password"
+          "label": "POSTGRES_PASS",
+          "default":  "postgres@123"
+        },
+        {
+          "name": "POSTGRES_MULTIPLE_EXTENSIONS",
+          "label": "POSTGRES_MULTIPLE_EXTENSIONS",
+          "default":  "postgis,hstore,postgis_topology,postgis_raster,pgrouting,unaccent"
+        },
+        {
+          "name": "POSTGIS_VOL",
+          "label": "POSTGIS_VOL",
+          "default":  "/data/becavol/postgis"
         }
       ],
       "volumes": [

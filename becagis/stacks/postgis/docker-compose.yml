@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  postgis:
+    image: becagis/postgis:${POSTGRES_VERSION:-14-3.2}
+    build:
+      context: .
+      args:
+        - POSTGRES_VERSION=${POSTGRES_VERSION:-14-3.2}
+        - TIMEZONE=${TIMEZONE:-Asia/Ho_Chi_Minh}
+        - POSTGRES_MULTIPLE_EXTENSIONS=${POSTGRES_MULTIPLE_EXTENSIONS:-postgis,hstore,postgis_topology,postgis_raster,pgrouting,unaccent}
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-gis,postgis_sample}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASS=${POSTGRES_PASSWORD:-postgres@123}
+    volumes:
+      - ${POSTGIS_VOL:-/data/becavol/postgis}:/var/lib/postgresql
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    restart: on-failure
