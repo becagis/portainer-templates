@@ -598,7 +598,7 @@
       "volumes": [
         {
           "container": "/data",
-          "bind": "/.becavol/nginx_proxy_manager"
+          "bind": "/.becavol/npm_app"
         },
         {
           "container": "/etc/letsencrypt",
