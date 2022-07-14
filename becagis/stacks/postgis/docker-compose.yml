@@ -14,7 +14,7 @@ services:
       - POSTGRES_USER=${POSTGRES_USER:-postgres}
       - POSTGRES_PASS=${POSTGRES_PASSWORD:-postgres@123}
     volumes:
-      - ${POSTGIS_VOL:-/data/becavol/postgis}:/var/lib/postgresql
+      - ${POSTGIS_VOL:-/data/becavol/postgis}${POSTGRES_VERSION:-latest}:/var/lib/postgresql
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     restart: on-failure
