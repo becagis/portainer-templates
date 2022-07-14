@@ -598,11 +598,11 @@
       "volumes": [
         {
           "container": "/data",
-          "bind": "~/.becavol/nginx_proxy_manager"
+          "bind": "/.becavol/nginx_proxy_manager"
         },
         {
           "container": "/etc/letsencrypt",
-          "bind": "~/.becavol/letsencrypt"
+          "bind": "/.becavol/letsencrypt"
         }
       ]
     },
