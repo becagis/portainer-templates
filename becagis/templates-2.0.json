@@ -816,13 +816,7 @@
       "platform": "linux",
       "logo": "https://opensource.appbase.io/dejavu/live/assets/img/dejavu.svg",
       "image": "appbaseio/dejavu",
-      "ports": ["1358/tcp"],
-      "volumes": [
-        {
-          "container": "/usr/share/elasticsearch/data",
-          "bind": "/data/becavol/elasticsearch"
-        }
-      ]
+      "ports": ["1358/tcp"]
     }
   ]
 }
