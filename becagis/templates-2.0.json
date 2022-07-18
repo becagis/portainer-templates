@@ -119,21 +119,6 @@
     },
     {
       "type": 1,
-      "title": "Elasticsearch",
-      "description": "Open-source search and analytics engine",
-      "categories": ["database"],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/elasticsearch.png",
-      "image": "docker.elastic.co/elasticsearch/elasticsearch:7.15.1",
-      "ports": ["9200/tcp", "9300/tcp"],
-      "volumes": [
-        {
-          "container": "/usr/share/elasticsearch/data"
-        }
-      ]
-    },
-    {
-      "type": 1,
       "title": "Gitlab CE",
       "description": "Open-source end-to-end software development platform",
       "note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
@@ -757,6 +742,79 @@
         {
           "container": "/var/lib/pgadmin",
           "bind": "/data/becavol/pgadmin"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Nginx Proxy Manager (DB)",
+      "name": "npm-hdb",
+      "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+      "note": "Expose your services easily and securely",
+      "logo": "https://nginxproxymanager.com/icon.png",
+      "categories": ["becagis"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/becagis/portainer-templates",
+        "stackfile": "becagis/stacks/nginx-proxy-manager/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "FORWARD_NPM_HTTP_PORT",
+          "label": "Public HTTP Port",
+          "default": "80"
+        },
+        {
+          "name": "FORWARD_NPM_HTTPS_PORT",
+          "label": "Public HTTPS Port",
+          "default": "443"
+        },
+        {
+          "name": "FORWARD_NPM_WEB_PORT",
+          "label": "Admin Web Port",
+          "default": "81"
+        },
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "label": "Root password",
+          "description": "Password used by the MySQL root user.",
+          "default": "npm"
+        },
+        {
+          "name": "DB_MYSQL_PASSWORD",
+          "label": "Database password",
+          "description": "Password used by the MySQL user.",
+          "default": "npm"
+        },
+        {
+          "name": "NPM_VOL",
+          "label": "NPM_VOL",
+          "default": "/data/becavol/npm-app-hdb"
+        },
+        {
+          "name": "LETSENCRYPT_VOL",
+          "label": "LETSENCRYPT_VOL",
+          "default": "/data/becavol/letsencrypt"
+        },
+        {
+          "name": "NPM_DB_VOL",
+          "label": "NPM_DB_VOL",
+          "default": "/data/becavol/mariadb"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Elasticsearch",
+      "description": "Open-source search and analytics engine",
+      "categories": ["database", "becagis"],
+      "platform": "linux",
+      "logo": "https://images.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt280217a63b82a734/6202d3378b1f312528798412/elastic-logo.svg",
+      "image": "elasticsearch:7.17.5",
+      "ports": ["9200/tcp", "9300/tcp"],
+      "volumes": [
+        {
+          "container": "/usr/share/elasticsearch/data"
         }
       ]
     }

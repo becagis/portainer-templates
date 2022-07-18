@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  logstash:
+    build:
+      context: .
+      args:
+        - LOGSTASH_VERSION=${LOGSTASH_VERSION:-8.3.2}
+        - POSTGRES_JDBC_VERSION=${POSTGRES_JDBC_VERSION:-42.4.0}
+    image: becagis/logstash:${LOGSTASH_VERSION:-8.3.2}
+    restart: on-failure
