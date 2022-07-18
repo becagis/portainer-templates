@@ -807,6 +807,22 @@
           "bind": "/data/becavol/elasticsearch"
         }
       ]
+    },
+    {
+      "type": 1,
+      "title": "Dejavu",
+      "description": "The Missing Web UI for Elasticsearch: Import, browse and edit data with rich filters and query views, create search UIs visually",
+      "categories": ["becagis"],
+      "platform": "linux",
+      "logo": "https://opensource.appbase.io/dejavu/live/assets/img/dejavu.svg",
+      "image": "appbaseio/dejavu",
+      "ports": ["1358/tcp"],
+      "volumes": [
+        {
+          "container": "/usr/share/elasticsearch/data",
+          "bind": "/data/becavol/elasticsearch"
+        }
+      ]
     }
   ]
 }

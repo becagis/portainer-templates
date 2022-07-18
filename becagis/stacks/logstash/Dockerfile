@@ -6,6 +6,7 @@ LABEL maintainer="Truong Thanh Tung <ttungbmt@gmail.com>"
 ARG POSTGRES_JDBC_VERSION=42.4.0
 ARG MYSQL_JDBC_VERSION=8.0.29
 
+#RUN rm -f /usr/share/logstash/pipeline/logstash.conf
 
 # Add lib database jdbc jars
 RUN curl https://jdbc.postgresql.org/download/postgresql-${MYSQL_JDBC_VERSION}.jar -o /usr/share/logstash/logstash-core/lib/jars/postgresql-jdbc.jar
@@ -21,6 +22,10 @@ RUN curl https://repo1.maven.org/maven2/mysql/mysql-connector-java/${MYSQL_JDBC_
 #COPY ./compose/sql-server/mssql-jdbc-7.4.1.jre11.jar /usr/share/logstash/logstash-core/lib/jars/mssql-jdbc.jar
 #COPY ./compose/oracle/ojdbc6-11.2.0.4.jar /usr/share/logstash/logstash-core/lib/jars/ojdbc6.jar
 #COPY ./compose/postgres/postgresql-42.2.8.jar /usr/share/logstash/logstash-core/lib/jars/postgresql.jar
+
+
+#ADD ./pipeline/ /usr/share/logstash/pipeline/
+#ADD ./config/ /usr/share/logstash/config/
 
 RUN logstash-plugin install logstash-integration-jdbc
 #RUN logstash-plugin install logstash-input-jdbc
