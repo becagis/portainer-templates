@@ -803,7 +803,8 @@
       ],
       "volumes": [
         {
-          "container": "/usr/share/elasticsearch/data"
+          "container": "/usr/share/elasticsearch/data",
+          "bind": "/data/becavol/elasticsearch"
         }
       ]
     }
