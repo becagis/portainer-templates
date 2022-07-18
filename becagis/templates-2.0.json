@@ -749,14 +749,13 @@
       "type": 3,
       "title": "ELK Stack",
       "name": "npm-hdb",
-      "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
-      "note": "Expose your services easily and securely",
+      "description": "A powerful open source search and analytics engine that makes data easy to explore",
       "logo": "https://raw.githubusercontent.com/becagis/portainer-templates/master/becagis/images/elastic-logo.svg",
-      "categories": ["becagis"],
+      "categories": ["database", "becagis"],
       "platform": "linux",
       "repository": {
         "url": "https://github.com/becagis/portainer-templates",
-        "stackfile": "becagis/stacks/nginx-proxy-manager/docker-compose.yml"
+        "stackfile": "becagis/stacks/elk/docker-compose.yml"
       },
       "env": [
         {
