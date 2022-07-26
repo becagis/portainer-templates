@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   npm-app-hdb:
-    image: jc21/nginx-proxy-manager:latest
+    image: jc21/nginx-proxy-manager
 #    container_name: npm-app-hdb
     restart: unless-stopped
     ports:
