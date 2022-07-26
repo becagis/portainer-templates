@@ -1,9 +1,8 @@
 version: "3.7"
 
 services:
-  npm-app-hdb:
+  npm-app:
     image: jc21/nginx-proxy-manager
-#    container_name: npm-app-hdb
     restart: unless-stopped
     ports:
       # Public HTTP Port:
@@ -35,7 +34,6 @@ services:
 
   npm-db:
     image: becagis/mysql
-#    container_name: npm-db
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD:-npm}"
