@@ -668,7 +668,7 @@
         {
           "name": "LETSENCRYPT_VOL",
           "label": "LETSENCRYPT_VOL",
-          "default": "/data/becavol/letsencrypt"
+          "default": "/data/becavol/npm-letsencrypt"
         },
         {
           "name": "NPM_DB_VOL",
