@@ -663,7 +663,7 @@
         {
           "name": "NPM_VOL",
           "label": "NPM_VOL",
-          "default": "/data/becavol/npm-app-hdb"
+          "default": "/data/becavol/npm-app"
         },
         {
           "name": "LETSENCRYPT_VOL",
