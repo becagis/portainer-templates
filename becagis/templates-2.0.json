@@ -622,7 +622,7 @@
     {
       "type": 3,
       "title": "Nginx Proxy Manager (DB)",
-      "name": "npm-hdb",
+      "name": "npm",
       "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
       "note": "Expose your services easily and securely",
       "logo": "https://nginxproxymanager.com/icon.png",
@@ -673,7 +673,7 @@
         {
           "name": "NPM_DB_VOL",
           "label": "NPM_DB_VOL",
-          "default": "/data/becavol/mariadb"
+          "default": "/data/becavol/npm-db"
         }
       ]
     },
