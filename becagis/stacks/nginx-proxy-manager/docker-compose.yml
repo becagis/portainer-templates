@@ -41,7 +41,7 @@ services:
       MYSQL_USER: '${DB_MYSQL_USER:-npm}'
       MYSQL_PASSWORD: '${DB_MYSQL_PASSWORD:-npm}'
     volumes:
-      - ${NPM_DB_VOL:-/data/becavol/mariadb}:/var/lib/mysql
+      - ${NPM_DB_VOL:-/data/becavol/npm-db}:/var/lib/mysql
     networks:
       - npm-internal
 
