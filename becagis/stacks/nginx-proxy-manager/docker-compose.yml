@@ -34,7 +34,7 @@ services:
 #      - npm-network
 
   npm-db:
-    image: mariadb
+    image: mysql
 #    container_name: npm-db
     restart: unless-stopped
     environment:
