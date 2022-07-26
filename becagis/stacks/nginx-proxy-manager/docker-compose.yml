@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  npm-app:
+  app:
     image: jc21/nginx-proxy-manager
     restart: unless-stopped
     ports:
@@ -32,7 +32,7 @@ services:
       - npm-internal
 #      - npm-network
 
-  npm-db:
+  db:
     image: becagis/mysql
     restart: unless-stopped
     environment:
