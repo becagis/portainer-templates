@@ -630,7 +630,7 @@
       "platform": "linux",
       "repository": {
         "url": "https://github.com/becagis/portainer-templates",
-        "stackfile": "becagis/stacks/nginx-proxy-manager/docker-compose.yml"
+        "stackfile": "becagis/stacks/npm/docker-compose.yml"
       },
       "env": [
         {
