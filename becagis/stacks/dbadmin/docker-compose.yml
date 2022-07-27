@@ -18,4 +18,4 @@ services:
       - 'PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL:-pgadmin@pgadmin.com}'
       - 'PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD:-pgadmin@123}'
     volumes:
-      - ${DATA_PATH_HOST:-/data/becadock/pgadmin}:/var/lib/pgadmin
+      - ${PGADMIN_VOL:-/data/becadock/pgadmin}:/var/lib/pgadmin
