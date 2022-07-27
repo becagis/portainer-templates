@@ -27,7 +27,7 @@ services:
       - ${NPM_VOL:-/data/becavol/npm-app}:/data
       - ${LETSENCRYPT_VOL:-/data/becavol/letsencrypt}:/etc/letsencrypt
     depends_on:
-      - npm-db
+      - db
     networks:
       - npm-internal
 #      - npm-network
