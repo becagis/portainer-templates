@@ -3,7 +3,7 @@ version: '3.7'
 services:
   ### phpMyAdmin ###########################################
   phpmyadmin:
-    image: phpmyadmin
+    image: phpmyadmin:${PMA_VERSION:-latest}
     restart: unless-stopped
     environment:
       - PMA_ARBITRARY=1
@@ -13,9 +13,9 @@ services:
 
   ### pgAdmin ##############################################
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:${PGADMIN_VERSION:-latest}
     environment:
       - 'PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL:-pgadmin@pgadmin.com}'
       - 'PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD:-pgadmin@123}'
     volumes:
-      - ${PGADMIN_VOL:-/data/becadock/pgadmin}:/var/lib/pgadmin
+      - ${PGADMIN_VOL:-/data/becavol/pgadmin}:/var/lib/pgadmin
