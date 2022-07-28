@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  ### Nginx ###########################################
+  nginx:
+    image: becagis/becadock_nginx:${MYSQL_VERSION:-latest}
+    container_name: ${COMPOSE_PROJECT_NAME:-webserver}_nginx
+    volumes:
+      - ${APP_CODE_PATH_HOST:-/home/vntts/VNTT/PROJECT}:${APP_CODE_PATH_CONTAINER:-/var/www}${APP_CODE_CONTAINER_FLAG}
+      - ${NGINX_HOST_LOG_PATH:-/data/becavol/nginx/log}:/var/log/nginx
+      - ${NGINX_SITES_PATH:-/data/becavol/nginx/sites-available}:/etc/nginx/sites-available
+      - ${NGINX_SSL_PATH:-/data/becavol/nginx/ssl}:/etc/nginx/ssl
+    restart: unless-stopped
+    networks:
+      - npm_network
+
+#  ### Apache ##############################################
+#  apache2:
+#    image: becagis/becadock_apaches:${APACHE_VERSION:-latest}
+#    container_name: ${COMPOSE_PROJECT_NAME:-webserver}_apache
+#    volumes:
+#      - ${APP_CODE_PATH_HOST:-/home/vntts/VNTT/PROJECT}:${APP_CODE_PATH_CONTAINER:-/var/www}${APP_CODE_CONTAINER_FLAG:-:cached}
+#      - ${APACHE_HOST_LOG_PATH:-/data/becavol/apache2/log}:/var/log/apache2
+#      - ${APACHE_SITES_PATH:-/data/becavol/apache2/sites-available}:/etc/apache2/sites-available
+#      - ${APACHE_SSL_PATH:-/data/becavol/apache2/ssl}:/etc/apache2/ssl
+#    restart: unless-stopped
+#    networks:
+#      - npm_network
+
+networks:
+  npm_network:
+    external: true

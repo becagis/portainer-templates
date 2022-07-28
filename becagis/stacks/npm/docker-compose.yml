@@ -29,8 +29,8 @@ services:
     depends_on:
       - db
     networks:
-      - npm-internal
-#      - npm-network
+      - internal
+      - npm_network
 
   db:
     image: becagis/mysql
@@ -43,9 +43,9 @@ services:
     volumes:
       - ${NPM_DB_VOL:-/data/becavol/npm-db}:/var/lib/mysql
     networks:
-      - npm-internal
+      - internal
 
 networks:
-  npm-internal:
-#  npm-network:
-#    external: true
+  internal:
+  npm_network:
+    external: true

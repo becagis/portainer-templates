@@ -13,7 +13,7 @@ services:
     volumes:
       - ${MYSQL_VOL:-/data/becavol/mysql-8}:/var/lib/mysql
     ports:
-      - "${MYSQL_PORT:-3306}:3306"
+      - '${MYSQL_PORT:-3306}:3306'
     restart: on-failure
     networks:
       - dbadmin_default
@@ -25,28 +25,12 @@ services:
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-postgres}
       - POSTGRES_PASS=${POSTGRES_PASSWORD:-postgres@123}
+      - TIMEZONE=${TIMEZONE:-Asia/Ho_Chi_Minh}
+      - POSTGRES_MULTIPLE_EXTENSIONS=${POSTGRES_MULTIPLE_EXTENSIONS:-postgis,hstore,postgis_topology,postgis_raster,pgrouting,unaccent}
     volumes:
-      - TIMEZONE=Asia/Ho_Chi_Minh
-      - POSTGRES_MULTIPLE_EXTENSIONS=postgis,hstore,postgis_topology,postgis_raster,pgrouting,unaccent
       - ${POSTGRES_VOL:-/data/becavol/postgis-13-3.1}:/var/lib/postgresql
     ports:
-      - "5331:5432"
-    restart: on-failure
-    networks:
-      - dbadmin_default
-
-  postgis-14-3.2:
-    image: kartoza/postgis:14-3.2
-    container_name: ${COMPOSE_PROJECT_NAME:-db}_postgis_1432
-    environment:
-      - TIMEZONE=Asia/Ho_Chi_Minh
-      - POSTGRES_MULTIPLE_EXTENSIONS=postgis,hstore,postgis_topology,postgis_raster,pgrouting,unaccent
-      - POSTGRES_USER=${POSTGRES_USER:-postgres}
-      - POSTGRES_PASS=${POSTGRES_PASSWORD:-postgres@123}
-    volumes:
-      - ${POSTGRES_VOL:-/data/becavol/postgis-14-3.2}:/var/lib/postgresql
-    ports:
-      - "5432:5432"
+      - '5331:5432'
     restart: on-failure
     networks:
       - dbadmin_default

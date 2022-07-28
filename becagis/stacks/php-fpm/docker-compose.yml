@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  ### Workspace Utilities ##################################
+  workspace:
+    image: becagis/becadock_workspace:8.1
+    container_name: ${COMPOSE_PROJECT_NAME:-php}_workspace_8.1
+    volumes:
+      - ${APP_CODE_PATH_HOST:-/home/vntts/VNTT/PROJECT}:${APP_CODE_PATH_CONTAINER:-/var/www}${APP_CODE_CONTAINER_FLAG}
+    tty: true
+    environment:
+      - PHP_IDE_CONFIG=${PHP_IDE_CONFIG:-serverName=laradock}
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - npm_network
+
+  ### PHP-FPM ###########################################
+  php-fpm-8.1:
+    image: becagis/becadock_php_fpm:8.1
+    container_name: ${COMPOSE_PROJECT_NAME:-php}_fpm_8.1
+    volumes:
+      - ${APP_CODE_PATH_HOST:-/home/vntts/VNTT/PROJECT}:${APP_CODE_PATH_CONTAINER:-/var/www}${APP_CODE_CONTAINER_FLAG}
+    restart: unless-stopped
+    networks:
+      - npm_network
+
+networks:
+  npm_network:
+    external: true
